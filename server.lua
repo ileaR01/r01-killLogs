@@ -6,7 +6,7 @@ AddEventHandler('killLogs:log', function(attackerServerId, weaponName, killType)
     local src = source
     local victimPed = GetPlayerPed(src)
 
-    if lastKillLog[src] and os.time() - lastKillLog[src] < 2 then return end
+    if lastKillLog[src] and os.time() - lastKillLog[src] < 1000 then return end
     lastKillLog[src] = os.time()
 
     if not DoesEntityExist(victimPed) then return end
